@@ -2,7 +2,7 @@
 
 module.exports = {
   context: __dirname,
-  entry: "./lib/matching_game.jsx",
+  entry: "./lib/react_matching_game.jsx",
   output: {
     path: "./",
     filename: "bundle.js"
