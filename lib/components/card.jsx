@@ -9,8 +9,11 @@ class Card extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    
-    if (!this.props.card.revealed && !this.props.card.matched) {
+    // check flipped cards count === 2
+    if (this.props.freeze) {
+      return;
+    }
+    else if (!this.props.card.revealed && !this.props.card.matched) {
       this.props.checkCard(this.props.card.pos);
     }
   }

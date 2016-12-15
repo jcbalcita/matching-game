@@ -13,6 +13,7 @@ class Game extends React.Component {
       shownCard: null,
       score: 0,
       turn: 0,
+      freeze: false,
     }
 
     this.checkCard = this.checkCard.bind(this);
@@ -55,20 +56,22 @@ class Game extends React.Component {
       });
     } else {
       currentCard.revealed = true;
+      this.setState({ freeze: true });
 
       window.setTimeout(() => {
         prevCard.revealed = false;
         currentCard.revealed = false;
         this.setState({
           turn: 0,
-          shownCard: null
-      })}, 1200);
+          shownCard: null,
+          freeze: false
+      })}, 1000);
     }
   }
 
   render() {
     const cards = this.state.board.cards.map((card, idx) => (
-      <Card card={card} key={idx} checkCard={this.checkCard}/>
+      <Card card={card} key={idx} freeze={this.state.freeze} checkCard={this.checkCard}/>
     ));
 
     if (this.state.score === 26) {
