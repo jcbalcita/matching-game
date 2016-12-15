@@ -65,7 +65,7 @@ class Game extends React.Component {
           turn: 0,
           shownCard: null,
           freeze: false
-      })}, 1000);
+      })}, 2000);
     }
   }
 
