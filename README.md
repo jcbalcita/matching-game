@@ -2,4 +2,7 @@
 
 Written with React.
 
-Run `npm install` in the root directory.
+## To Play
+- Download or clone this repository.
+- Run `npm install` in the root directory.
+- Open `index.html` in your browser.

@@ -1,3 +1,8 @@
+html, h1, ul, li {
+  text-align: center;
+  margin: 0 auto;
+}
+
 ul {
   list-style: none;
   min-width: 480px;
