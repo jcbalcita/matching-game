@@ -54,12 +54,15 @@ class Game extends React.Component {
         shownCard: null
       });
     } else {
-      prevCard.revealed = false;
-      currentCard.revealed = false;
-      this.setState({
-        turn: 0,
-        shownCard: null
-      });
+      currentCard.revealed = true;
+
+      window.setTimeout(() => {
+        prevCard.revealed = false;
+        currentCard.revealed = false;
+        this.setState({
+          turn: 0,
+          shownCard: null
+      })}, 1200);
     }
   }
 

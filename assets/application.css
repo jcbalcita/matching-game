@@ -1,6 +1,7 @@
 ul {
   list-style: none;
-  width: 720px;
+  min-width: 480px;
+  max-width: 1080px;
 }
 
 #board {
