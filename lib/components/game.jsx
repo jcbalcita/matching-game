@@ -1,4 +1,4 @@
-import Board from './board';
+import Card from './card';
 import * as MatchingGame from '../matching_game';
 import React from 'react';
 
@@ -7,14 +7,28 @@ class Game extends React.Component {
     super(props);
 
     const board = new MatchingGame.Board();
-    this.board = board;
+    this.state = {
+      board: board,
+      shownCard: null,
+      score: 0,
+    }
+  }
+
+  checkMatch() {
+    console.log("!!!");
   }
 
   render() {
-    let cards = this.board.cards.map((card, idx) => <li key={idx}>{card.value + card.suit}</li>);
+    const cards = this.state.board.cards.map((card, idx) => (
+      <Card card={card} key={idx} />
+    ));
+
+    
 
     return (
-      <ul>{cards}</ul>
+      <div>
+        <ul id="board">{cards}</ul>
+      </div>
     )
   }
 

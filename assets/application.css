@@ -1,0 +1,56 @@
+ul {
+  list-style: none;
+  width: 720px;
+}
+
+#board {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  height: 100px;
+  width: 70px;
+  margin: 4px;
+  border: 2px solid black;
+}
+
+.hidden {
+  height: 100px;
+}
+
+.hidden:hover {
+  cursor: pointer;
+  border: 2px solid red;
+}
+
+.revealed {
+  height: 100px;
+}
+
+.suit-image {
+  height: 30px;
+  margin: 10px auto;
+  display: block;
+}
+
+.matched {
+  background-color: #90EE90;
+  opacity: 0.3;
+}
+
+.red {
+  margin: 0;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  font-size: 22px;
+}
+
+.black {
+  margin: 0;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  font-size: 22px;
+}
