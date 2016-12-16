@@ -9,24 +9,26 @@ class Card extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    // check flipped cards count === 2
+    const card = this.props.card
     if (this.props.freeze) {
       return;
     }
-    else if (!this.props.card.revealed && !this.props.card.matched) {
-      this.props.checkCard(this.props.card.pos);
+    else if (!card.revealed && !card.matched) {
+      this.props.checkCard(card.pos);
     }
   }
 
   render() {
     const card = this.props.card
     const suit = `assets/${card.suit}.png`
-    const colors = { "hearts": "red",
-                     "spades": "black",
-                     "clubs": "black",
-                     "diamonds": "red"
+    const color = card.suit === "spades" || card.suit === "clubs" ? "black" : "red"
+    const klass = () => {
+      if (card.revealed && !card.matched) {
+        return "card revealed";
+      } else if (card.matched) {
+        return "card matched";
+      }
     }
-    const color = colors[card.suit];
 
     if (!card.revealed && !card.matched) {
       return (
@@ -34,22 +36,14 @@ class Card extends React.Component {
           <img src="assets/card_back.jpg"></img>
         </li>
       );
-    } else if (card.revealed && !card.matched) {
+    } else {
         return (
-          <li className="card revealed">
+          <li className={klass()}>
             <img src={suit} className="suit-image"></img>
             <br />
             <p className={color}>{card.value}</p>
           </li>
         );
-    } else if (card.matched) {
-       return (
-         <li className="card matched">
-           <img src={suit} className="suit-image"></img>
-           <br />
-           <p className={color}>{card.value}</p>
-         </li>
-       );
     }
   }
 }
