@@ -76,12 +76,18 @@ class Game extends React.Component {
 
     if (this.state.score === 26) {
       return (
-        <div>Modal.</div>
+        <div>
+          Yay! You won!
+          <button onClick={() => this.setState({ board: new MatchinGame.Board })}>
+            New Game
+          </button>
+        </div>
       )
     }
 
     return (
       <div>
+        <p id="score"> Pairs found: {this.state.score}</p>
         <ul id="board">{cards}</ul>
       </div>
     )
