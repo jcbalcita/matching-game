@@ -44,7 +44,7 @@ class Game extends React.Component {
     const board = this.state.board;
 
     if (currentCard.value === prevCard.value) {
-      const score = this.state.score += 1
+      const score = this.state.score + 1
       prevCard.revealed = false;
       prevCard.matched = true;
       currentCard.revealed = false;
