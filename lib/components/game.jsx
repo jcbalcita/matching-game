@@ -17,6 +17,7 @@ class Game extends React.Component {
     }
 
     this.checkCard = this.checkCard.bind(this);
+    this.resetGame = this.resetGame.bind(this);
   }
 
   checkCard(pos) {
@@ -69,6 +70,10 @@ class Game extends React.Component {
     }
   }
 
+  resetGame() {
+
+  }
+
   render() {
     const cards = this.state.board.cards.map((card, idx) => (
       <Card card={card} key={idx} freeze={this.state.freeze} checkCard={this.checkCard}/>
@@ -78,21 +83,26 @@ class Game extends React.Component {
       return (
         <div>
           Yay! You won!
-          <button onClick={() => this.setState({ board: new MatchinGame.Board })}>
-            New Game
-          </button>
         </div>
       )
     }
 
     return (
       <div>
+        <button onClick={() => this.setState({
+            board: new MatchingGame.Board(),
+            shownCard: null,
+            score: 0,
+            turn: 0,
+            freeze: false
+        })}>
+          Reset Game
+        </button>
         <p id="score"> Pairs found: {this.state.score}</p>
         <ul id="board">{cards}</ul>
       </div>
     )
   }
-
 }
 
 export default Game;

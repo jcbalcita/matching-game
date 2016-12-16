@@ -3,6 +3,19 @@ html, h1, ul, li {
   margin: 0 auto;
 }
 
+button {
+  background-color: white;
+  border-radius: 2px;
+  padding: 3px;
+  border: 1px solid black;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
 ul {
   list-style: none;
   min-width: 480px;
