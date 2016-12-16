@@ -102,7 +102,7 @@ class Game extends React.Component {
         <button onClick={this.resetGame}>
           Reset Game
         </button>
-        &nbsp;
+        &nbsp;&nbsp;
         <button onClick={() => this.setState({ score: 26 })}>
           Skip to end
         </button>
