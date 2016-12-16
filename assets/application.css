@@ -27,6 +27,11 @@ ul {
   flex-wrap: wrap;
 }
 
+#winning-message {
+  font-size: 36px;
+  font-weight: bold;
+}
+
 .card {
   height: 100px;
   width: 70px;
