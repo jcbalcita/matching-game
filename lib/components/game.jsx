@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Card from './card';
 import * as MatchingGame from '../matching_game';
 
@@ -14,6 +13,8 @@ class Game extends React.Component {
       score: 0,
       turn: 0,
       freeze: false,
+      seenCards: {},
+      matchedCards: {}
     }
 
     this.checkCard = this.checkCard.bind(this);
@@ -78,6 +79,10 @@ class Game extends React.Component {
       turn: 0,
       freeze: false
     })
+  }
+
+  computerTurn() {
+    // ...
   }
 
   render() {
