@@ -22,7 +22,7 @@ class Game extends React.Component {
 
   checkCard(pos) {
     const board = this.state.board;
-    const card = board.cards[pos]
+    const card = board.cards[pos];
     card.revealed = true;
 
     this.setState({ board }, () => {

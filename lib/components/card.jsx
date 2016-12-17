@@ -9,7 +9,7 @@ class Card extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    const card = this.props.card
+    const card = this.props.card;
     if (this.props.freeze) {
       return;
     }
@@ -19,9 +19,9 @@ class Card extends React.Component {
   }
 
   render() {
-    const card = this.props.card
-    const suit = `assets/${card.suit}.png`
-    const color = card.suit === "spades" || card.suit === "clubs" ? "black" : "red"
+    const card = this.props.card;
+    const suit = `assets/${card.suit}.png`;
+    const color = card.suit === "spades" || card.suit === "clubs" ? "black" : "red";
     const klass = () => {
       if (card.revealed && !card.matched) {
         return "card revealed";
