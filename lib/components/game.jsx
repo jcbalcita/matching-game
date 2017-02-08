@@ -7,14 +7,14 @@ class Game extends React.Component {
     super(props);
 
     const board = new MatchingGame.Board();
+    const ai = new MatchingGame.ComputerPlayer();
     this.state = {
       board: board,
       shownCard: null,
       score: 0,
       turn: 0,
       freeze: false,
-      seenCards: {},
-      matchedCards: {}
+      ai: ai
     }
 
     this.checkCard = this.checkCard.bind(this);
